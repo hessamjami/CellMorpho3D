@@ -82,9 +82,6 @@ This command trains a classification model and extends the features.csv table wi
 It outputs evaluation.csv, a table of metric values for cross-validation, and feature_importance.csv, a table providing the importance of every feature for the classifier.
 The features.csv table can be used for downstream analysis to support the research objective.
 
-For detailed instructions and more information, please refer to the RedTell GitHub Repository.
-
-This section provides a brief overview of how to use RedTell in your GitHub repository and directs users to the RedTell repository for more details.
+For detailed instructions and more information, please refer to the [RedTell GitHub Repository](https://github.com/marrlab/RedTell).
 
 
-Note: Please install the C++ API. If you have already installed OpenMM with 'Conda' on your system you still need to install the C++ API from the source code (more information on OpenMM website). You may need to install additional software packages (OpenCL, FFTW,SWIG, etc) depending on your choice of platforms (GPU, CPU).
