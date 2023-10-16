@@ -31,7 +31,7 @@ STEP 2: Enter:
 make clean;make -j4
 OpenMM
 The Vertual Cell Model package takes advantage of OpenMM as its main molecular dynamics engine. Please use the instructions on the OpenMM webpage to install OpenMM.
-#The RedTell software 
+# The RedTell software 
 [RedTell](https://github.com/marrlab/RedTell) is implemented in Python and can be accessed through the command line on any operating system. Here are the steps to use RedTell:
 Navigate to the RedTell code directory to execute the tool.
 Place the data directory inside the RedTell directory, containing an images subdirectory with images in formats .tif, .png, and .jpg to be processed.
