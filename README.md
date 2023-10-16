@@ -11,7 +11,7 @@ The Virtual Cell Model (VCM) software package is a Molecular Dynamics (MD) simul
 
 For more details, please visit the [Virtual Cell Model GitHub Repository](https://github.com/afarnudi/VirtualCellModel).
 VCM is a software package written in C++. It currently runs on MacOS and Linux. To build it you need a c++ compiler (g++, llvm, etc). VCM uses OpenMM as its main engin. If you don't have OpenMM please read the next section. If you already have OpenMM installed, you need to:
-
+# Usage
 STEP 1: Install the Boost library
 
 STEP 2: Clone the VirtualCellModel project from our github page.
@@ -33,7 +33,7 @@ OpenMM
 The Vertual Cell Model package takes advantage of OpenMM as its main molecular dynamics engine. Please use the instructions on the OpenMM webpage to install OpenMM.
 #The RedTell software 
 [RedTell](https://github.com/marrlab/RedTell) is implemented in Python and can be accessed through the command line on any operating system. Here are the steps to use RedTell:
-
+# Usage
 Navigate to the RedTell code directory to execute the tool.
 Place the data directory inside the RedTell directory, containing an images subdirectory with images in formats .tif, .png, and .jpg to be processed.
 To perform segmentation using RedTell's native Mask R-CNN model:
