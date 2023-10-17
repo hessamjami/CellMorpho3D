@@ -32,17 +32,22 @@ make clean;make -j4
 OpenMM
 The Vertual Cell Model package takes advantage of OpenMM as its main molecular dynamics engine. Please use the instructions on the OpenMM webpage to install OpenMM.
 # The RedTell software 
-[RedTell](https://github.com/marrlab/RedTell) is implemented in Python and can be accessed through the command line on any operating system. Here are the steps to use RedTell:
+[RedTell](https://github.com/marrlab/RedTell) is implemented in Python and can be accessed through the command line on any operating system.
+Here are the steps to use RedTell:
 Navigate to the RedTell code directory to execute the tool.
 Place the data directory inside the RedTell directory, containing an images subdirectory with images in formats .tif, .png, and .jpg to be processed.
 To perform segmentation using RedTell's native Mask R-CNN model:
 
 shell
+
 Copy code
+
 $ python redtell.py --funct segment --data <data_dir> --model <model_name>
+
 The --data variable denotes the path to the data directory, which should contain the images subdirectory.
 If a model name is specified, <model_name>.model from the model directory is used for segmentation.
 Running the command without specifying a model (without --model <model_name>) uses RedTell's default segmentation model.
+
 This command creates two new directories in the data folder: masks with segmentation masks and segmentation_results with segmentation masks overlaid on the original images and containing unique cell identifiers.
 
 To train a new segmentation model adjusted to a custom dataset:
