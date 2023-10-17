@@ -1,61 +1,38 @@
-//
-// Chromatin_functions.cpp
-// Cell - Durotaxis
-//
+def chromatin_constructor(Chromatin_Bead_Position, Chromatin_Bead_Velocity, Chromatin_Bead_Force, chromatin_contant_matrix_calculation_flag, CmLaststeps):
+    file_name = "xvchromatin.txt"
+    
+    with open(file_name, "r") as read:
+        for j in range(Chromatin_num_of_Beads):
+            line = read.readline().split()
+            Chromatin_Bead_Position[j][0] = float(line[0])
+            Chromatin_Bead_Position[j][1] = float(line[1])
+            Chromatin_Bead_Position[j][2] = float(line[2])
 
+            Chromatin_Bead_Position[j][0] *= Chromatin_Scaling_Factor
+            Chromatin_Bead_Position[j][1] *= Chromatin_Scaling_Factor
+            Chromatin_Bead_Position[j][2] *= Chromatin_Scaling_Factor
 
-# include "Chromatin_functions.hpp"
+        for j in range(Chromatin_num_of_Beads):
+            line = read.readline().split()
+            Chromatin_Bead_Velocity[j][0] = float(line[0])
+            Chromatin_Bead_Velocity[j][1] = float(line[1])
+            Chromatin_Bead_Velocity[j][2] = float(line[2])
 
-using
-namespace
-std;
+    if chromatin_contant_matrix_calculation_flag:
+        for i in range(Chromatin_num_of_Beads):
+            for j in range(Chromatin_num_of_Beads):
+                CmLaststeps[i][j] = 0.0
 
-void
-Chromatin_constructor(double
-Chromatin_Bead_Position[Chromatin_num_of_Beads][3], double
-Chromatin_Bead_Velocity[Chromatin_num_of_Beads][3], double
-Chromatin_Bead_Force[Chromatin_num_of_Beads][3], bool
-chromatin_contant_matrix_calculation_flag, float
-CmLaststeps[Chromatin_num_of_Beads][Chromatin_num_of_Beads])
-{
-    ifstream
-read;
-read.open("xvchromatin.txt");
+# Define Chromatin_num_of_Beads and Chromatin_Scaling_Factor here
+Chromatin_num_of_Beads =  # Your value
+Chromatin_Scaling_Factor =  # Your value
 
-for (int j=0;j < Chromatin_num_of_Beads; j++) // all
-beads
-interaction
-whit
-the
-next
-one
-{
-    read >> Chromatin_Bead_Position[j][0];
-read >> Chromatin_Bead_Position[j][1];
-read >> Chromatin_Bead_Position[j][2];
+# Initialize your arrays
+Chromatin_Bead_Position = [[0.0] * 3 for _ in range(Chromatin_num_of_Beads)]
+Chromatin_Bead_Velocity = [[0.0] * 3 for _ in range(Chromatin_num_of_Beads)]
+Chromatin_Bead_Force = [[0.0] * 3 for _ in range(Chromatin_num_of_Beads)]
+CmLaststeps = [[0.0] * Chromatin_num_of_Beads for _ in range(Chromatin_num_of_Beads)]
 
-Chromatin_Bead_Position[j][0] *= Chromatin_Scaling_Factor;
-Chromatin_Bead_Position[j][1] *= Chromatin_Scaling_Factor;
-Chromatin_Bead_Position[j][2] *= Chromatin_Scaling_Factor;
+chromatin_contant_matrix_calculation_flag = True
 
-}
-
-for (int j=0;j < Chromatin_num_of_Beads; j++) // all beads interaction whit the next one
-{
-read >> Chromatin_Bead_Velocity[j][0];
-read >> Chromatin_Bead_Velocity[j][1];
-read >> Chromatin_Bead_Velocity[j][2];
-}
-
-if (chromatin_contant_matrix_calculation_flag == true) {
-for (int i=0;i < Chromatin_num_of_Beads;i++)
-{
-for (int j=0;j < Chromatin_num_of_Beads;j++)
-{
-CmLaststeps[i][j]=0.0;
-}
-
-}
-}
-
-}
+chromatin_constructor(Chromatin_Bead_Position, Chromatin_Bead_Velocity, Chromatin_Bead_Force, chromatin_contant_matrix_calculation_flag, CmLaststeps)
