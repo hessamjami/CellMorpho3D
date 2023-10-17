@@ -58,34 +58,53 @@ RedTell requires at least 25 annotated images for training.
 To perform training:
 
 shell
+
 Copy code
+
 $ python redtell.py --funct train_segmentation --data <data_dir> --model <model_name>
+
 This command trains a new segmentation model and saves it as <model_name>.model in the model directory.
-To apply the new model to images, use the segmentation command again with the new model as --model <model_name>.
+To apply the new model to images, use the segmentation command again with the new model as
+
+--model <model_name>.
+
 To extract features:
 
 shell
+
 Copy code
+
 $ python redtell.py --funct feature_extraction --data <data_dir> --channel <channel>
+
 The <channel> variable defines what channels the features are extracted from.
 It can have multiple values, such as mask, bf, and fluo-4.
 The extracted features are saved in a features.csv table in the directory containing the data.
 In case of cell classification:
 
 Run the annotation command to create annotated cell images:
+
 shell
+
 Copy code
+
 $ python redtell.py --funct annotate --data <data_dir> --num_cells <num_cells>
+
 The <num_cells> parameter denotes the number of cells to annotate.
+
 The command creates an annotation directory in the data directory with saved single-cell images.
+
 To perform classification:
 
 shell
+
 Copy code
+
 $ python redtell.py --funct classify --data <data_dir>
-This command trains a classification model and extends the features.csv table with a label column.
-It outputs evaluation.csv, a table of metric values for cross-validation, and feature_importance.csv, a table providing the importance of every feature for the classifier.
-The features.csv table can be used for downstream analysis to support the research objective.
+
+
+#This command trains a classification model and extends the features.csv table with a label column.
+#It outputs evaluation.csv, a table of metric values for cross-validation, and feature_importance.csv, a table providing the importance of every feature for the classifier.
+#The features.csv table can be used for downstream analysis to support the research objective.
 
 For detailed instructions and more information, please refer to the [RedTell GitHub Repository](https://github.com/marrlab/RedTell).
 
